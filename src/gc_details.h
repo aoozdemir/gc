@@ -17,8 +17,15 @@ array, then arraySize contains its size */
     // If this is an array, then size specifies
     // the size of the array.
 
-    PtrDetails(void) {
-        // TODO: Implement PtrDetails
+    PtrDetails(T *m_ptr, unsigned size = 0) {
+        refcount = 0;
+        memPtr = m_ptr;
+        if (size != 0)
+            isArray = true;
+        else
+            isArray = false;
+
+        arraySize = size;
     }
 };
 // Overloading operator== allows two class objects to be compared.
